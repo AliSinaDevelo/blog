@@ -1,8 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-    --bg: white;
-    --textColor: purple;
-    --softBg: #f0f0f0;
-    --softTextColor: #626262;
+    --bg: #f9fafb;
+    --textColor: #1f2937;
+    --softBg: #f3f4f6;
+    --softTextColor: #4b5563;
+    --accentColor: #2563eb;
+}
+
+.dark {
+    --bg: #111827;
+    --textColor: #f9fafb;
+    --softBg: #1f2937;
+    --softTextColor: #d1d5db;
+    --accentColor: #3b82f6;
 }
 
 * {
@@ -14,6 +27,8 @@
 body {
     max-width: 100vw;
     overflow-x: hidden;
+    background-color: var(--bg);
+    color: var(--textColor);
 }
 
 a {
@@ -23,17 +38,30 @@ a {
 
 .container {
     min-height: 100vh;
-    background-color: var(--bg);
-    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
 }
 
 .wrapper {
-    max-width: 1536px;
-    margin-left: auto;
-    margin-right: auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+}
 
-    padding-left: 80px;
-    padding-right: 80px;
+@layer components {
+    .btn-primary {
+        @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300;
+    }
+    
+    .btn-secondary {
+        @apply bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md transition duration-300;
+    }
+    
+    .card {
+        @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden;
+    }
+    
+    .input-field {
+        @apply w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white;
+    }
 }
 
 @media screen and {max-width: 1536px} {
