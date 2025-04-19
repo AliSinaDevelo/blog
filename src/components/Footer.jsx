@@ -13,10 +13,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              DevBlog
+              AliSina Dev
             </Link>
             <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-              Insights, tutorials and engineering expertise from developers to developers.
+              Building elegant and practical solutions to complex problems. From scalable backend systems to sleek frontend designs.
             </p>
           </div>
           
@@ -112,7 +112,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400 text-sm">
-          <p>© {currentYear} DevBlog. All rights reserved.</p>
+          <p>© {currentYear} Ali Sina Karimi. All rights reserved.</p>
         </div>
       </div>
     </footer>

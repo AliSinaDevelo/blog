@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              DevBlog
+              AliSina Dev
             </span>
           </Link>
 
