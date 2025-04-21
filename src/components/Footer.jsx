@@ -74,7 +74,7 @@ const Footer = () => {
             <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Connect</h3>
             <div className="flex space-x-4 mt-2">
               <a
-                href="https://github.com"
+                href="https://github.com/AliSinaDevelo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
@@ -83,7 +83,7 @@ const Footer = () => {
                 <FiGithub size={18} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/AlisinaDevelo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
@@ -92,7 +92,7 @@ const Footer = () => {
                 <FiTwitter size={18} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/alisina-karimi-43a834224/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
@@ -101,7 +101,7 @@ const Footer = () => {
                 <FiLinkedin size={18} />
               </a>
               <a
-                href="mailto:contact@devblog.com"
+                href="mailto:alisinadevelo@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
                 aria-label="Email"
               >

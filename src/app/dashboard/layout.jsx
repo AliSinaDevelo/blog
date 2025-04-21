@@ -74,7 +74,7 @@ export default function DashboardLayout({ children }) {
             {/* Sidebar header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-800">
               <Link href="/dashboard" className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                DevBlog
+                AliSina Dev
               </Link>
               <button
                 className="lg:hidden"
@@ -134,7 +134,7 @@ export default function DashboardLayout({ children }) {
               <FiMenu size={24} />
             </button>
             <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              DevBlog Dashboard
+              AliSina Dev Dashboard
             </h1>
           </div>
 
