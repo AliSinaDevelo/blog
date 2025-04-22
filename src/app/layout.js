@@ -8,7 +8,7 @@ import NextTopLoader from 'nextjs-toploader'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Ali Sina - Software Development Blog',
+  title: 'Alisina - Software Development Blog',
   description: 'Personal blog sharing insights and tutorials on Go, Python, React, Vue.js, and modern full-stack development.',
 }
 

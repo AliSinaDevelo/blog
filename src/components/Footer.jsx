@@ -112,7 +112,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400 text-sm">
-          <p>© {currentYear} Ali Sina Karimi. All rights reserved.</p>
+          <p>© {currentYear} Alisina Karimi. All rights reserved.</p>
         </div>
       </div>
     </footer>

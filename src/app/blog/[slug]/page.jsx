@@ -173,8 +173,8 @@ function UserList() {
           authorId: '123',
           author: {
             id: '123',
-            name: 'Ali Sina',
-            image: 'https://randomuser.me/api/portraits/men/32.jpg',
+            name: 'Alisina',
+            image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
             bio: 'Software Developer who thrives on building elegant and practical solutions. Passionate about scalable backend systems, sleek frontend designs, and efficient infrastructure with expertise in Go, Python, and modern JavaScript frameworks.',
           },
           tags: ['golang', 'react', 'fullstack'],

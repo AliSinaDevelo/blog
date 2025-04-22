@@ -52,8 +52,8 @@ const FeaturedPosts = () => {
       views: 1586,
       tags: ['golang', 'react', 'fullstack'],
       author: {
-        name: 'Ali Sina',
-        image: 'https://randomuser.me/api/portraits/men/32.jpg',
+        name: 'Alisina',
+        image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
       },
     },
     {
@@ -66,8 +66,8 @@ const FeaturedPosts = () => {
       views: 1342,
       tags: ['docker', 'kubernetes', 'devops'],
       author: {
-        name: 'Ali Sina',
-        image: 'https://randomuser.me/api/portraits/men/32.jpg',
+        name: 'Alisina',
+        image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
       },
     },
     {
@@ -80,8 +80,8 @@ const FeaturedPosts = () => {
       views: 1247,
       tags: ['vue', 'fastapi', 'python'],
       author: {
-        name: 'Ali Sina',
-        image: 'https://randomuser.me/api/portraits/men/32.jpg',
+        name: 'Alisina',
+        image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
       },
     },
   ];
