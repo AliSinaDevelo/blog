@@ -64,19 +64,19 @@ a {
     }
 }
 
-@media screen and {max-width: 1536px} {
+@media screen and (max-width: 1536px) {
     .wrapper {
         max-width: 1366px;
     }
 }
 
-@media screen and {max-width: 1200px} {
+@media screen and (max-width: 1200px) {
     .wrapper {
         max-width: 1024px;
     }
 }
 
-@media screen and {max-width: 1024px} {
+@media screen and (max-width: 1024px) {
     .wrapper {
         max-width: 768px;
         padding-left: 40px;
