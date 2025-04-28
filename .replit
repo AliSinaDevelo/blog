@@ -1,0 +1,30 @@
+run = "npm run start"
+entrypoint = "src/app/page.jsx"
+
+hidden = [".build", ".config"]
+
+[packager]
+language = "nodejs"
+
+[packager.features]
+enabledForHosting = true
+packageSearch = true
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["sh", "-c", "npm run start"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[env]
+XDG_CONFIG_HOME = "/home/runner/.config"
+
+[auth]
+pageEnabled = false
+buttonEnabled = false 
