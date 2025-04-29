@@ -57,6 +57,26 @@ A modern, full-featured blog built with Next.js, Tailwind CSS, and MongoDB.
 
 7. Access the blog at http://localhost:3000
 
+## Troubleshooting
+
+### Authentication Issues
+
+If you experience issues with OAuth authentication:
+
+1. Make sure your callback URLs are correctly set up in the provider's developer console
+2. For GitHub: `http://localhost:3000/api/auth/callback/github` (for local development)
+3. For Google: `http://localhost:3000/api/auth/callback/google` (for local development)
+4. Check that the client ID and secret are correctly configured in your `.env` file
+
+### Database Connection Issues
+
+If you can't connect to MongoDB:
+
+1. Ensure your MongoDB connection string includes the database name (`/blog` in the URL)
+2. Check that your IP address is whitelisted in MongoDB Atlas Network Access settings
+3. Verify that your database username and password are correct
+4. Try running `npm run db:push` to see specific error messages
+
 ## Deploying on Replit
 
 1. Create a new Replit using "Import from GitHub"

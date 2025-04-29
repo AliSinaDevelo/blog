@@ -1,40 +1,41 @@
-import prisma from "@/lib/prisma";
-import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
+import { NextResponse } from 'next/server';
+import prisma from '@/lib/prisma';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
 
-// Create a comment
+// POST /api/comments - Create a new comment
 export async function POST(request) {
-  try {
-    const session = await getServerSession(authOptions);
-    
-    if (!session || !session.user) {
-      return NextResponse.json(
-        { message: "You must be logged in to comment" },
-        { status: 401 }
-      );
-    }
+  const session = await getServerSession(authOptions);
 
+  // Check authentication
+  if (!session || !session.user) {
+    return NextResponse.json(
+      { error: 'Authentication required' },
+      { status: 401 }
+    );
+  }
+
+  try {
     const body = await request.json();
     const { content, postId } = body;
 
+    // Validate required fields
     if (!content || !postId) {
       return NextResponse.json(
-        { message: "Content and postId are required" },
+        { error: 'Content and postId are required' },
         { status: 400 }
       );
     }
 
-    // Check if post exists
+    // Check if the post exists
     const post = await prisma.post.findUnique({
-      where: {
-        id: postId,
-      },
+      where: { id: postId },
+      select: { id: true },
     });
 
     if (!post) {
       return NextResponse.json(
-        { message: "Post not found" },
+        { error: 'Post not found' },
         { status: 404 }
       );
     }
@@ -43,20 +44,13 @@ export async function POST(request) {
     const comment = await prisma.comment.create({
       data: {
         content,
-        post: {
-          connect: {
-            id: postId,
-          },
-        },
-        author: {
-          connect: {
-            id: session.user.id,
-          },
-        },
+        post: { connect: { id: postId } },
+        author: { connect: { id: session.user.id } },
       },
       include: {
         author: {
           select: {
+            id: true,
             name: true,
             image: true,
           },
@@ -64,11 +58,11 @@ export async function POST(request) {
       },
     });
 
-    return NextResponse.json({ comment }, { status: 201 });
+    return NextResponse.json(comment, { status: 201 });
   } catch (error) {
-    console.error("Error creating comment:", error);
+    console.error('Error creating comment:', error);
     return NextResponse.json(
-      { message: "Internal server error" },
+      { error: 'Failed to create comment' },
       { status: 500 }
     );
   }
