@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FiClock, FiCalendar, FiEye } from 'react-icons/fi';
+import { FiCalendar, FiEye } from 'react-icons/fi';
 
 const FeaturedPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -40,55 +40,6 @@ const FeaturedPosts = () => {
     }).format(date);
   };
 
-  // Placeholder posts for development or when API fails
-  const placeholderPosts = [
-    {
-      id: '1',
-      title: 'Building Modern Web Applications with Go and React',
-      slug: 'building-modern-web-applications-with-go-and-react',
-      content: 'Modern full-stack development often requires mastering multiple technologies across different domains. Using Go for backend services with React for frontend applications creates a powerful tech stack that combines performance with great user experiences...',
-      coverImage: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613',
-      createdAt: '2023-06-01T12:00:00Z',
-      views: 1586,
-      tags: ['golang', 'react', 'fullstack'],
-      author: {
-        name: 'Alisina',
-        image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-      },
-    },
-    {
-      id: '2',
-      title: 'Mastering Microservices with Docker and Kubernetes',
-      slug: 'mastering-microservices-with-docker-kubernetes',
-      content: 'Exploring how to build, deploy, and scale microservices using Docker containers and Kubernetes orchestration. Learn best practices for containerization and efficient system design...',
-      coverImage: 'https://images.unsplash.com/photo-1621498892236-ebb6c1e3fd37',
-      createdAt: '2023-05-25T10:30:00Z',
-      views: 1342,
-      tags: ['docker', 'kubernetes', 'devops'],
-      author: {
-        name: 'Alisina',
-        image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-      },
-    },
-    {
-      id: '3',
-      title: 'Building Real-Time Applications with Vue.js and FastAPI',
-      slug: 'building-real-time-applications-vue-fastapi',
-      content: 'Learn how to combine Vue.js and FastAPI to create responsive, real-time web applications with high performance and excellent developer experience...',
-      coverImage: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479',
-      createdAt: '2023-05-15T09:15:00Z',
-      views: 1247,
-      tags: ['vue', 'fastapi', 'python'],
-      author: {
-        name: 'Alisina',
-        image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-      },
-    },
-  ];
-
-  // Use placeholder posts when loading or when there's an error
-  const displayPosts = posts.length > 0 ? posts : placeholderPosts;
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {loading ? (
@@ -114,11 +65,16 @@ const FeaturedPosts = () => {
       ) : error ? (
         <div className="col-span-3 text-center py-10">
           <p className="text-red-500">{error}</p>
-          <p className="mt-4">Showing placeholder content instead</p>
+          <p className="mt-4">Please check your database connection</p>
+        </div>
+      ) : posts.length === 0 ? (
+        <div className="col-span-3 text-center py-10">
+          <p className="text-gray-600 dark:text-gray-400">No posts available.</p>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">Create some posts to see them here.</p>
         </div>
       ) : (
         // Actual posts
-        displayPosts.map((post) => (
+        posts.map((post) => (
           <div key={post.id} className="card group hover:shadow-lg transition duration-300">
             <Link href={`/blog/${post.slug}`} className="block">
               <div className="relative h-48 overflow-hidden rounded-t-lg">

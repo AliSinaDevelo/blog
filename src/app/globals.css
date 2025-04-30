@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-    --bg: #f9fafb;
-    --textColor: #1f2937;
-    --softBg: #f3f4f6;
-    --softTextColor: #4b5563;
-    --accentColor: #2563eb;
+    --bg: #ffffff;
+    --textColor: #111827;
+    --softBg: #f8fafc;
+    --softTextColor: #334155;
+    --accentColor: #1e40af;
 }
 
 .dark {
@@ -48,19 +48,19 @@ a {
 
 @layer components {
     .btn-primary {
-        @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300;
+        @apply bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-md transition duration-300;
     }
     
     .btn-secondary {
-        @apply bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md transition duration-300;
+        @apply bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-md transition duration-300;
     }
     
     .card {
-        @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden;
+        @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow duration-300;
     }
     
     .input-field {
-        @apply w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white;
+        @apply w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white;
     }
 }
 

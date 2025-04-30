@@ -26,129 +26,29 @@ export default function BlogPage() {
       try {
         setLoading(true);
         
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // Build query params
+        const params = new URLSearchParams();
+        if (tag) params.set('tag', tag);
+        if (searchQuery) params.set('search', searchQuery);
+        params.set('page', currentPage.toString());
+        params.set('pageSize', '6');
         
-        // These would normally come from an API
-        const dummyPosts = [
-          {
-            id: '1',
-            title: 'Building Modern Web Applications with Go and React',
-            slug: 'building-modern-web-applications-with-go-and-react',
-            content: 'Modern full-stack development often requires mastering multiple technologies across different domains. Using Go for backend services with React for frontend applications creates a powerful tech stack that combines performance with great user experiences...',
-            coverImage: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613',
-            author: {
-              name: 'Alisina',
-              image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-            },
-            tags: ['golang', 'react', 'fullstack'],
-            views: 1586,
-            comments: 12,
-            createdAt: '2023-06-01T12:00:00Z',
-          },
-          {
-            id: '2',
-            title: 'Mastering Microservices with Docker and Kubernetes',
-            slug: 'mastering-microservices-with-docker-kubernetes',
-            content: 'Exploring how to build, deploy, and scale microservices using Docker containers and Kubernetes orchestration. Learn best practices for containerization and efficient system design...',
-            coverImage: 'https://images.unsplash.com/photo-1621498892236-ebb6c1e3fd37',
-            author: {
-              name: 'Alisina',
-              image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-            },
-            tags: ['docker', 'kubernetes', 'devops'],
-            views: 1342,
-            comments: 8,
-            createdAt: '2023-05-25T10:30:00Z',
-          },
-          {
-            id: '3',
-            title: 'Building Real-Time Applications with Vue.js and FastAPI',
-            slug: 'building-real-time-applications-vue-fastapi',
-            content: 'Learn how to combine Vue.js and FastAPI to create responsive, real-time web applications with high performance and excellent developer experience...',
-            coverImage: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479',
-            author: {
-              name: 'Alisina',
-              image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-            },
-            tags: ['vue', 'fastapi', 'python'],
-            views: 1247,
-            comments: 14,
-            createdAt: '2023-05-15T09:15:00Z',
-          },
-          {
-            id: '4',
-            title: 'Advanced State Management in React with Context API and Hooks',
-            slug: 'advanced-state-management-react',
-            content: 'Deep dive into React state management beyond Redux. Learn how to effectively use Context API and custom hooks to build maintainable state management systems...',
-            coverImage: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee',
-            author: {
-              name: 'Alisina',
-              image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-            },
-            tags: ['react', 'javascript', 'frontend'],
-            views: 1892,
-            comments: 21,
-            createdAt: '2023-05-10T14:45:00Z',
-          },
-          {
-            id: '5',
-            title: 'Performance Optimization Techniques for Go Applications',
-            slug: 'performance-optimization-go',
-            content: 'Learn advanced strategies for optimizing Go applications. From memory management to concurrency patterns, discover how to make your Go code blazingly fast...',
-            coverImage: 'https://images.unsplash.com/photo-1605745341040-cb968ebd662e',
-            author: {
-              name: 'Alisina',
-              image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-            },
-            tags: ['golang', 'performance', 'backend'],
-            views: 1432,
-            comments: 16,
-            createdAt: '2023-05-05T11:30:00Z',
-          },
-          {
-            id: '6',
-            title: 'Building Scalable Systems with PostgreSQL and TimescaleDB',
-            slug: 'scalable-systems-postgresql-timescaledb',
-            content: 'Strategies for designing and implementing high-performance database systems using PostgreSQL and TimescaleDB for time-series data applications...',
-            coverImage: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d',
-            author: {
-              name: 'Alisina',
-              image: 'https://avatars.githubusercontent.com/u/100498538?v=4',
-            },
-            tags: ['databases', 'postgresql', 'performance'],
-            views: 1054,
-            comments: 11,
-            createdAt: '2023-04-28T08:20:00Z',
-          },
-        ];
+        const response = await fetch(`/api/posts?${params.toString()}`);
         
-        // Extract all tags from posts for the filter
-        const allTags = Array.from(
-          new Set(dummyPosts.flatMap(post => post.tags))
-        ).sort();
-        
-        setTags(allTags);
-        
-        // Filter posts by tag if provided
-        let filteredPosts = dummyPosts;
-        if (tag) {
-          filteredPosts = dummyPosts.filter(post => 
-            post.tags.includes(tag.toLowerCase())
-          );
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts');
         }
         
-        // Filter by search term if provided
-        if (searchQuery) {
-          filteredPosts = filteredPosts.filter(post => 
-            post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            post.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
-          );
-        }
+        const data = await response.json();
+        setPosts(data.posts || []);
+        setTotalPages(data.pagination?.totalPages || 1);
         
-        setPosts(filteredPosts);
-        setTotalPages(Math.ceil(filteredPosts.length / 6));
+        // Fetch all tags for filtering
+        const tagsResponse = await fetch('/api/tags');
+        if (tagsResponse.ok) {
+          const tagsData = await tagsResponse.json();
+          setTags(tagsData.tags || []);
+        }
       } catch (err) {
         console.error('Error fetching posts:', err);
         setError('Failed to load posts. Please try again later.');
@@ -158,7 +58,7 @@ export default function BlogPage() {
     };
 
     fetchPosts();
-  }, [tag, searchQuery]);
+  }, [tag, searchQuery, currentPage]);
 
   // Format date function
   const formatDate = (dateString) => {
@@ -319,14 +219,16 @@ export default function BlogPage() {
               ? `No posts found with tag "${tag}"`
               : searchQuery
               ? `No posts matching "${searchQuery}"`
-              : 'No posts available at the moment.'}
+              : 'No posts available at the moment. Create some posts to see them here.'}
           </p>
-          <button
-            onClick={handleClearFilters}
-            className="btn-primary"
-          >
-            Clear Filters
-          </button>
+          {(tag || searchQuery) && (
+            <button
+              onClick={handleClearFilters}
+              className="btn-primary"
+            >
+              Clear Filters
+            </button>
+          )}
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -353,7 +255,7 @@ export default function BlogPage() {
                     {post.title}
                   </h2>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-                    {post.content}
+                    {post.content.replace(/<[^>]*>/g, '')}
                   </p>
                   <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400">
                     <div className="flex items-center">
