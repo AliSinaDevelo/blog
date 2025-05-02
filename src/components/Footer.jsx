@@ -15,7 +15,7 @@ const Footer = () => {
             <Link href="/" className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               AliSina Dev
             </Link>
-            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+            <p className="mt-2 text-secondary-text dark:text-gray-400 text-sm">
               Building elegant and practical solutions to complex problems. From scalable backend systems to sleek frontend designs.
             </p>
           </div>
@@ -25,22 +25,22 @@ const Footer = () => {
             <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
+                <Link href="/" className="text-secondary-text dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
+                <Link href="/blog" className="text-secondary-text dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
+                <Link href="/about" className="text-secondary-text dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
+                <Link href="/contact" className="text-secondary-text dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
                   Contact
                 </Link>
               </li>
@@ -52,17 +52,17 @@ const Footer = () => {
             <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
+                <Link href="/privacy" className="text-secondary-text dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
+                <Link href="/terms" className="text-secondary-text dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/cookies" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
+                <Link href="/cookies" className="text-secondary-text dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm">
                   Cookie Policy
                 </Link>
               </li>
@@ -77,7 +77,7 @@ const Footer = () => {
                 href="https://github.com/AliSinaDevelo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                className="text-gray-700 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
                 aria-label="GitHub"
               >
                 <FiGithub size={18} />
@@ -86,7 +86,7 @@ const Footer = () => {
                 href="https://x.com/AlisinaDevelo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                className="text-gray-700 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
                 aria-label="Twitter"
               >
                 <FiTwitter size={18} />
@@ -95,14 +95,14 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/alisina-karimi-43a834224/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                className="text-gray-700 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
                 aria-label="LinkedIn"
               >
                 <FiLinkedin size={18} />
               </a>
               <a
                 href="mailto:alisinadevelo@gmail.com"
-                className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                className="text-gray-700 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
                 aria-label="Email"
               >
                 <FiMail size={18} />
@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400 text-sm">
+        <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-secondary-text dark:text-gray-400 text-sm">
           <p>© {currentYear} Alisina Karimi. All rights reserved.</p>
         </div>
       </div>

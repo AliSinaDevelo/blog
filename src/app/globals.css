@@ -64,6 +64,58 @@ a {
     }
 }
 
+/* Explicit light mode overrides for better contrast */
+:root {
+    --card-bg: white;
+    --card-text: #111827;
+    --card-border: #e5e7eb;
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    --secondary-text: #4b5563;
+    --muted-text: #6b7280;
+    --highlight-bg: #f3f4f6;
+    --btn-text: white;
+}
+
+.dark {
+    --card-bg: #1f2937;
+    --card-text: #f3f4f6;
+    --card-border: #374151;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --secondary-text: #d1d5db;
+    --muted-text: #9ca3af;
+    --highlight-bg: #374151;
+    --btn-text: white;
+}
+
+/* Fix light mode text contrast issues */
+.card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border-color: var(--card-border);
+    box-shadow: 0 1px 3px var(--card-shadow);
+}
+
+.card h2, .card h3 {
+    color: var(--card-text);
+}
+
+.card p {
+    color: var(--secondary-text);
+}
+
+/* Make sure text is visible in light mode */
+.text-gray-600:not(.dark .text-gray-600) {
+    color: #4b5563 !important;
+}
+
+.text-gray-500:not(.dark .text-gray-500) {
+    color: #6b7280 !important;
+}
+
+.text-gray-400:not(.dark .text-gray-400) {
+    color: #9ca3af !important;
+}
+
 @media screen and (max-width: 1536px) {
     .wrapper {
         max-width: 1366px;

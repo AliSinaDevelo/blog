@@ -107,7 +107,7 @@ export default function BlogPage() {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Blog</h1>
-        <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-secondary-text dark:text-gray-300 max-w-2xl mx-auto">
           Dive into articles, tutorials, and insights on software engineering, web development, and tech trends.
         </p>
       </div>
@@ -147,7 +147,7 @@ export default function BlogPage() {
             {(tag || searchQuery) && (
               <button
                 onClick={handleClearFilters}
-                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                className="text-sm text-muted-text dark:text-gray-400 hover:text-primary dark:hover:text-primary"
               >
                 Clear all
               </button>
@@ -180,7 +180,7 @@ export default function BlogPage() {
         {/* Active filters */}
         {(tag || searchQuery) && (
           <div className="mt-4 flex items-center text-sm">
-            <span className="text-gray-600 dark:text-gray-400 mr-2">Active filters:</span>
+            <span className="text-muted-text dark:text-gray-400 mr-2">Active filters:</span>
             {tag && (
               <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 mr-2">
                 Tag: {tag}
@@ -214,7 +214,7 @@ export default function BlogPage() {
       ) : posts.length === 0 ? (
         <div className="text-center py-12">
           <h3 className="text-xl font-semibold mb-2">No posts found</h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-secondary-text dark:text-gray-400 mb-4">
             {tag
               ? `No posts found with tag "${tag}"`
               : searchQuery
@@ -254,10 +254,10 @@ export default function BlogPage() {
                   <h2 className="text-xl font-semibold mb-2 group-hover:text-primary transition">
                     {post.title}
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                  <p className="text-secondary-text dark:text-gray-400 mb-4 line-clamp-2">
                     {post.content.replace(/<[^>]*>/g, '')}
                   </p>
-                  <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400">
+                  <div className="flex justify-between text-sm text-muted-text dark:text-gray-400">
                     <div className="flex items-center">
                       {post.author?.image && (
                         <div className="relative w-6 h-6 rounded-full overflow-hidden mr-2">
@@ -276,7 +276,7 @@ export default function BlogPage() {
                       <span>{formatDate(post.createdAt)}</span>
                     </div>
                   </div>
-                  <div className="flex justify-between mt-4 text-sm text-gray-500 dark:text-gray-400">
+                  <div className="flex justify-between mt-4 text-sm text-muted-text dark:text-gray-400">
                     <div className="flex items-center">
                       <FiEye size={14} className="mr-1" />
                       <span>{post.views} views</span>

@@ -32,11 +32,11 @@ const Navbar = () => {
   };
   
   const isActive = (path) => {
-    return pathname === path ? 'text-blue-600 dark:text-blue-400' : '';
+    return pathname === path ? 'text-blue-600 dark:text-blue-400 font-medium' : 'text-gray-800 dark:text-gray-200';
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800">
       <div className="wrapper py-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
@@ -48,16 +48,16 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/" className={`hover:text-blue-600 transition ${isActive('/')}`}>
+            <Link href="/" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/')}`}>
               Home
             </Link>
-            <Link href="/blog" className={`hover:text-blue-600 transition ${isActive('/blog')}`}>
+            <Link href="/blog" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/blog')}`}>
               Blog
             </Link>
-            <Link href="/about" className={`hover:text-blue-600 transition ${isActive('/about')}`}>
+            <Link href="/about" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/about')}`}>
               About
             </Link>
-            <Link href="/contact" className={`hover:text-blue-600 transition ${isActive('/contact')}`}>
+            <Link href="/contact" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/contact')}`}>
               Contact
             </Link>
           </div>
@@ -67,7 +67,7 @@ const Navbar = () => {
             {mounted && (
               <button
                 onClick={handleThemeChange}
-                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-700 dark:text-gray-300"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
@@ -76,7 +76,7 @@ const Navbar = () => {
 
             {session ? (
               <div className="flex items-center space-x-4">
-                <Link href="/dashboard" className="hover:text-blue-600 transition">
+                <Link href="/dashboard" className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition">
                   Dashboard
                 </Link>
                 {session.user.image ? (
@@ -95,7 +95,7 @@ const Navbar = () => {
                 )}
                 <button
                   onClick={() => signOut()}
-                  className="hover:text-red-500 transition"
+                  className="text-gray-800 dark:text-gray-200 hover:text-red-500 transition"
                 >
                   Logout
                 </button>
@@ -104,7 +104,7 @@ const Navbar = () => {
               <div className="flex items-center space-x-4">
                 <Link
                   href="/auth/signin"
-                  className="text-primary hover:text-blue-700 transition"
+                  className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition"
                 >
                   Login
                 </Link>
@@ -123,7 +123,7 @@ const Navbar = () => {
             {mounted && (
               <button
                 onClick={handleThemeChange}
-                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-700 dark:text-gray-300"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
@@ -131,7 +131,7 @@ const Navbar = () => {
             )}
             <button
               onClick={toggleMenu}
-              className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-700 dark:text-gray-300"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -144,16 +144,16 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
           <div className="wrapper py-4 flex flex-col space-y-4">
-            <Link href="/" className={`hover:text-blue-600 transition ${isActive('/')}`} onClick={closeMenu}>
+            <Link href="/" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/')}`} onClick={closeMenu}>
               Home
             </Link>
-            <Link href="/blog" className={`hover:text-blue-600 transition ${isActive('/blog')}`} onClick={closeMenu}>
+            <Link href="/blog" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/blog')}`} onClick={closeMenu}>
               Blog
             </Link>
-            <Link href="/about" className={`hover:text-blue-600 transition ${isActive('/about')}`} onClick={closeMenu}>
+            <Link href="/about" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/about')}`} onClick={closeMenu}>
               About
             </Link>
-            <Link href="/contact" className={`hover:text-blue-600 transition ${isActive('/contact')}`} onClick={closeMenu}>
+            <Link href="/contact" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/contact')}`} onClick={closeMenu}>
               Contact
             </Link>
             
@@ -175,14 +175,14 @@ const Navbar = () => {
                         {session.user.name?.charAt(0) || 'U'}
                       </div>
                     )}
-                    <span>{session.user.name}</span>
+                    <span className="text-gray-800 dark:text-gray-200">{session.user.name}</span>
                   </div>
-                  <Link href="/dashboard" className="hover:text-blue-600 transition" onClick={closeMenu}>
+                  <Link href="/dashboard" className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition" onClick={closeMenu}>
                     Dashboard
                   </Link>
                   <button
                     onClick={() => signOut()}
-                    className="text-left hover:text-red-500 transition"
+                    className="text-left text-gray-800 dark:text-gray-200 hover:text-red-500 transition"
                   >
                     Logout
                   </button>
@@ -191,7 +191,7 @@ const Navbar = () => {
                 <div className="flex flex-col space-y-4">
                   <Link
                     href="/auth/signin"
-                    className="text-primary hover:text-blue-700 transition"
+                    className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition"
                     onClick={closeMenu}
                   >
                     Login

@@ -96,10 +96,10 @@ const FeaturedPosts = () => {
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 line-clamp-2 mb-4">
+                <p className="text-secondary-text dark:text-gray-400 line-clamp-2 mb-4">
                   {post.content.replace(/<[^>]*>/g, '').substring(0, 150)}...
                 </p>
-                <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex justify-between text-sm text-muted-text dark:text-gray-400">
                   <div className="flex items-center">
                     {post.author?.image && (
                       <div className="relative w-6 h-6 rounded-full overflow-hidden mr-2">
