@@ -15,14 +15,14 @@ export default async function Home() {
               <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">insights & tutorials</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Stay ahead with the latest software engineering trends, best practices, and deep technical insights.
+              Stay ahead with the latest software engineering trends, best practices, and deep technical insights from my development journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/blog" className="btn-primary text-center">
-                Explore Articles
+                Read My Articles
               </Link>
               <Link href="/auth/signup" className="border border-primary text-primary hover:bg-primary hover:text-white font-bold py-2 px-4 rounded-md transition duration-300 text-center">
-                Join the Community
+                Join Me
               </Link>
             </div>
           </div>
@@ -44,7 +44,7 @@ export default async function Home() {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold">Featured Articles</h2>
           <p className="text-gray-600 dark:text-gray-300 mt-2">
-            Handpicked content to help you excel in software development
+            Articles I've handpicked to help you level up your development skills
           </p>
         </div>
         <FeaturedPosts />
@@ -53,9 +53,9 @@ export default async function Home() {
       {/* Topics Section */}
       <section className="py-10">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold">Explore Topics</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Topics I Write About</h2>
           <p className="text-gray-600 dark:text-gray-300 mt-2">
-            Deep dive into the areas that interest you most
+            Dive into areas I'm passionate about sharing
           </p>
         </div>
         
@@ -66,10 +66,10 @@ export default async function Home() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Programming</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Best practices, patterns, and coding techniques across languages
+              Best practices, patterns, and coding techniques I've learned
             </p>
             <Link href="/blog?tag=programming" className="text-primary hover:text-blue-700 mt-auto">
-              Explore →
+              Read More →
             </Link>
           </div>
           
@@ -79,10 +79,10 @@ export default async function Home() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Databases</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Data modeling, optimization, and modern storage solutions
+              My experiences with data modeling and storage solutions
             </p>
             <Link href="/blog?tag=databases" className="text-primary hover:text-blue-700 mt-auto">
-              Explore →
+              Read More →
             </Link>
           </div>
           
@@ -92,10 +92,10 @@ export default async function Home() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Backend</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              APIs, services, microservices architecture and deployment
+              How I approach APIs, services, and backend architecture
             </p>
             <Link href="/blog?tag=backend" className="text-primary hover:text-blue-700 mt-auto">
-              Explore →
+              Read More →
             </Link>
           </div>
           
@@ -105,10 +105,10 @@ export default async function Home() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Frontend</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              UI/UX, frameworks, responsive design and modern web apps
+              My take on UI/UX, frameworks, and modern web apps
             </p>
             <Link href="/blog?tag=frontend" className="text-primary hover:text-blue-700 mt-auto">
-              Explore →
+              Read More →
             </Link>
           </div>
         </div>
@@ -117,16 +117,16 @@ export default async function Home() {
       {/* Call to Action */}
       <section className="bg-gradient-to-r from-primary to-secondary rounded-lg p-8 md:p-12 text-white">
         <div className="text-center max-w-3xl mx-auto space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold">Join Our Developer Community</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Connect With Me</h2>
           <p className="text-lg opacity-90">
-            Connect with fellow developers, share your knowledge, and stay updated with the latest in software engineering.
+            I'd love to hear from you! Sign up to receive updates or reach out with questions, ideas, or just to say hi.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/auth/signup" className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 rounded-md transition duration-300 text-center">
-              Sign Up Now
+              Sign Up
             </Link>
             <Link href="/contact" className="bg-transparent border-2 border-white hover:bg-white/10 font-bold py-3 px-6 rounded-md transition duration-300 text-center">
-              Contact Us
+              Contact Me
             </Link>
           </div>
         </div>

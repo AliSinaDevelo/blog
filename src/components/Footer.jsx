@@ -16,7 +16,7 @@ const Footer = () => {
               AliSina Dev
             </Link>
             <p className="mt-2 text-secondary-text dark:text-gray-400 text-sm">
-              Building elegant and practical solutions to complex problems. From scalable backend systems to sleek frontend designs.
+              I build elegant and practical solutions to complex problems. From scalable backend systems to sleek frontend designs, I love bringing ideas to life.
             </p>
           </div>
           
@@ -71,7 +71,7 @@ const Footer = () => {
           
           {/* Social */}
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Connect</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Find Me</h3>
             <div className="flex space-x-4 mt-2">
               <a
                 href="https://github.com/AliSinaDevelo"
