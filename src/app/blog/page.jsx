@@ -205,7 +205,7 @@ export default function BlogPage() {
         <div className="text-center py-12">
           <p className="text-red-500 mb-4">{error}</p>
           <button
-            onClick={() => router.reload()}
+            onClick={() => window.location.reload()}
             className="btn-primary"
           >
             Try Again

@@ -15,7 +15,7 @@ export default function CookiePolicy() {
         
         <h2>Hey There!</h2>
         <p>
-          I'm AliSina, and this is my cookie policy (not the chocolate chip kind, unfortunately!). 
+          I&apos;m AliSina, and this is my cookie policy (not the chocolate chip kind, unfortunately!). 
           This page explains how I use cookies and similar technologies on my blog, and what options you have.
         </p>
         
@@ -32,13 +32,13 @@ export default function CookiePolicy() {
         <ul>
           <li>
             <strong>Essential cookies:</strong> These help my blog function properly. They enable basic features like page navigation and access to secure areas. 
-            My site won't work properly without these cookies!
+            My site won&apos;t work properly without these cookies!
           </li>
           <li>
             <strong>Preference cookies:</strong> These remember your choices (like dark mode vs. light mode) to make your experience better.
           </li>
           <li>
-            <strong>Authentication cookies:</strong> If you create an account or log in, I use cookies to remember you're logged in.
+            <strong>Authentication cookies:</strong> If you create an account or log in, I use cookies to remember you&apos;re logged in.
           </li>
           <li>
             <strong>Analytics cookies:</strong> I use these to understand how visitors interact with my blog, which helps me improve it.
@@ -69,7 +69,7 @@ export default function CookiePolicy() {
         
         <h2>Changes to This Policy</h2>
         <p>
-          I might update this cookie policy from time to time. I'll post the new version here and update the "last updated" date.
+          I might update this cookie policy from time to time. I&apos;ll post the new version here and update the &quot;last updated&quot; date.
         </p>
         
         <h2>Contact Me</h2>

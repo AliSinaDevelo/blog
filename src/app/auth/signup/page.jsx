@@ -78,12 +78,21 @@ const SignUp = () => {
 
       // Auto login after successful registration
       setTimeout(async () => {
-        await signIn('credentials', {
+        const loginResult = await signIn('credentials', {
           redirect: false,
           email: formData.email,
           password: formData.password,
         });
-        router.push('/');
+        
+        if (loginResult?.error) {
+          setError('Account created but sign-in failed. Please try signing in manually.');
+          setTimeout(() => {
+            router.push('/auth/signin');
+          }, 2000);
+        } else {
+          router.push('/');
+          router.refresh();
+        }
       }, 2000);
     } catch (err) {
       console.error('Registration error:', err);
@@ -91,6 +100,15 @@ const SignUp = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleOAuthMessage = () => {
+    setError('OAuth login is currently disabled. Please use email registration.');
+  };
+
+  const handleOAuthSignIn = (provider) => {
+    setLoading(true);
+    signIn(provider, { callbackUrl: '/' });
   };
 
   return (
@@ -231,16 +249,16 @@ const SignUp = () => {
         <div className="grid grid-cols-2 gap-4">
           <button
             type="button"
-            onClick={() => signIn('github', { callbackUrl: '/' })}
-            className="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+            onClick={() => handleOAuthSignIn('github')}
+            className="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <FiGithub className="mr-2" />
             GitHub
           </button>
           <button
             type="button"
-            onClick={() => signIn('google', { callbackUrl: '/' })}
-            className="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+            onClick={() => handleOAuthSignIn('google')}
+            className="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <FcGoogle className="mr-2" />
             Google

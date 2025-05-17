@@ -15,16 +15,16 @@ export default function TermsOfService() {
         
         <h2>Welcome!</h2>
         <p>
-          Hi there! I'm AliSina, and I'm thrilled you're visiting my blog. These Terms of Service outline the rules and guidelines for using my site. 
-          By accessing or using this blog, you're agreeing to these terms, so please read them carefully.
+          Hi there! I&apos;m AliSina, and I&apos;m thrilled you&apos;re visiting my blog. These Terms of Service outline the rules and guidelines for using my site. 
+          By accessing or using this blog, you&apos;re agreeing to these terms, so please read them carefully.
         </p>
         
         <h2>Using My Content</h2>
         <p>
-          All the content on this blog—including articles, code snippets, images, and designs—is my intellectual property. Here's how you can use it:
+          All the content on this blog—including articles, code snippets, images, and designs—is my intellectual property. Here&apos;s how you can use it:
         </p>
         <ul>
-          <li>You're welcome to read, share links to, and reference my content.</li>
+          <li>You&apos;re welcome to read, share links to, and reference my content.</li>
           <li>For code snippets, you can use them in your projects (attribution is appreciated but not required).</li>
           <li>If you want to republish my articles or use my content for commercial purposes, please <Link href="/contact" className="text-primary hover:underline">contact me</Link> first.</li>
         </ul>
@@ -34,8 +34,8 @@ export default function TermsOfService() {
           If you create an account on my blog:
         </p>
         <ul>
-          <li>You're responsible for maintaining the security of your account and password.</li>
-          <li>You're responsible for all activities that happen under your account.</li>
+          <li>You&apos;re responsible for maintaining the security of your account and password.</li>
+          <li>You&apos;re responsible for all activities that happen under your account.</li>
           <li>I reserve the right to terminate accounts that violate these terms or for inactive accounts.</li>
         </ul>
         
@@ -45,13 +45,13 @@ export default function TermsOfService() {
         </p>
         <ul>
           <li>You retain ownership of your content, but you grant me a license to display, store, and use it on my blog.</li>
-          <li>Your content must not violate any laws or infringe on anyone's rights.</li>
+          <li>Your content must not violate any laws or infringe on anyone&apos;s rights.</li>
           <li>I reserve the right to remove content that I find objectionable or that violates these terms.</li>
         </ul>
         
         <h2>Acceptable Use</h2>
         <p>
-          When using my blog, please don't:
+          When using my blog, please don&apos;t:
         </p>
         <ul>
           <li>Engage in illegal activities</li>
@@ -63,18 +63,18 @@ export default function TermsOfService() {
         
         <h2>Third-Party Links and Services</h2>
         <p>
-          My blog may contain links to third-party websites or services that aren't under my control. I'm not responsible for the content or practices of these sites.
+          My blog may contain links to third-party websites or services that aren&apos;t under my control. I&apos;m not responsible for the content or practices of these sites.
         </p>
         
         <h2>Limitation of Liability</h2>
         <p>
-          I strive to provide accurate and helpful information, but I can't guarantee that my content is always error-free or up-to-date. 
-          I'm not liable for any damages resulting from your use of, or inability to use, my blog.
+          I strive to provide accurate and helpful information, but I can&apos;t guarantee that my content is always error-free or up-to-date. 
+          I&apos;m not liable for any damages resulting from your use of, or inability to use, my blog.
         </p>
         
         <h2>Changes to These Terms</h2>
         <p>
-          I may update these Terms of Service from time to time. I'll post the new version here and update the "last updated" date.
+          I may update these Terms of Service from time to time. I&apos;ll post the new version here and update the &quot;last updated&quot; date.
         </p>
         
         <h2>Contact Me</h2>

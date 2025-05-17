@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
         
         <h2>Introduction</h2>
         <p>
-          Hey there! I'm AliSina, the developer behind this blog. I take your privacy seriously, and I want to be transparent about how I collect and use your data.
+          Hey there! I&apos;m AliSina, the developer behind this blog. I take your privacy seriously, and I want to be transparent about how I collect and use your data.
           This privacy policy explains what information I gather when you visit my blog and how I use it.
         </p>
         
@@ -24,9 +24,9 @@ export default function PrivacyPolicy() {
           When you visit my blog, I may collect some basic information:
         </p>
         <ul>
-          <li><strong>Account information:</strong> If you create an account, I'll store your email address, name (if provided), and securely hashed password.</li>
+          <li><strong>Account information:</strong> If you create an account, I&apos;ll store your email address, name (if provided), and securely hashed password.</li>
           <li><strong>Usage data:</strong> I use analytics to understand how visitors interact with my blog, including which pages are visited, how long you stay, and which features you use.</li>
-          <li><strong>Comments and contributions:</strong> If you leave comments or interact with posts, I'll store that content along with your user information.</li>
+          <li><strong>Comments and contributions:</strong> If you leave comments or interact with posts, I&apos;ll store that content along with your user information.</li>
         </ul>
         
         <h2>How I Use Your Information</h2>
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
         
         <h2>Data Security</h2>
         <p>
-          I do my best to protect your data using industry-standard security measures, but no system is 100% secure. I'll notify you if there's ever a breach affecting your personal information.
+          I do my best to protect your data using industry-standard security measures, but no system is 100% secure. I&apos;ll notify you if there&apos;s ever a breach affecting your personal information.
         </p>
         
         <h2>Your Rights</h2>
@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
         
         <h2>Changes to This Policy</h2>
         <p>
-          I might update this privacy policy from time to time. I'll post the new version here and update the "last updated" date.
+          I might update this privacy policy from time to time. I&apos;ll post the new version here and update the &quot;last updated&quot; date.
         </p>
         
         <h2>Contact Me</h2>

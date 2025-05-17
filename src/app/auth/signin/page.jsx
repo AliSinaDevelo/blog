@@ -55,6 +55,15 @@ const SignIn = () => {
     }
   };
 
+  const handleOAuthMessage = () => {
+    setError('OAuth login is currently disabled. Please use credentials to sign in.');
+  };
+
+  const handleOAuthSignIn = (provider) => {
+    setLoading(true);
+    signIn(provider, { callbackUrl: '/' });
+  };
+
   return (
     <div className="flex justify-center py-10">
       <div className="card w-full max-w-md p-8">
@@ -148,16 +157,16 @@ const SignIn = () => {
         <div className="grid grid-cols-2 gap-4">
           <button
             type="button"
-            onClick={() => signIn('github', { callbackUrl: '/' })}
-            className="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+            onClick={() => handleOAuthSignIn('github')}
+            className="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <FiGithub className="mr-2" />
             GitHub
           </button>
           <button
             type="button"
-            onClick={() => signIn('google', { callbackUrl: '/' })}
-            className="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+            onClick={() => handleOAuthSignIn('google')}
+            className="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <FcGoogle className="mr-2" />
             Google
@@ -165,7 +174,7 @@ const SignIn = () => {
         </div>
 
         <p className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link
             href="/auth/signup"
             className="font-medium text-primary hover:text-blue-700"

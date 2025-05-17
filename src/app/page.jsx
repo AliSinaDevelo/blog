@@ -44,7 +44,7 @@ export default async function Home() {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold">Featured Articles</h2>
           <p className="text-gray-600 dark:text-gray-300 mt-2">
-            Articles I've handpicked to help you level up your development skills
+            Articles I&apos;ve handpicked to help you level up your development skills
           </p>
         </div>
         <FeaturedPosts />
@@ -55,7 +55,7 @@ export default async function Home() {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold">Topics I Write About</h2>
           <p className="text-gray-600 dark:text-gray-300 mt-2">
-            Dive into areas I'm passionate about sharing
+            Dive into areas I&apos;m passionate about sharing
           </p>
         </div>
         
@@ -66,7 +66,7 @@ export default async function Home() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Programming</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Best practices, patterns, and coding techniques I've learned
+              Best practices, patterns, and coding techniques I&apos;ve learned
             </p>
             <Link href="/blog?tag=programming" className="text-primary hover:text-blue-700 mt-auto">
               Read More →
@@ -119,7 +119,7 @@ export default async function Home() {
         <div className="text-center max-w-3xl mx-auto space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">Connect With Me</h2>
           <p className="text-lg opacity-90">
-            I'd love to hear from you! Sign up to receive updates or reach out with questions, ideas, or just to say hi.
+            I&apos;d love to hear from you! Sign up to receive updates or reach out with questions, ideas, or just to say hi.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/auth/signup" className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 rounded-md transition duration-300 text-center">

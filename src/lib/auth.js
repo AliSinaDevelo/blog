@@ -8,6 +8,12 @@ import prisma from "./prisma";
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
+    // GitHub and Google OAuth providers are now enabled
+    // Make sure you have set up proper OAuth credentials in your .env file
+    // with the correct callback URLs:
+    //    - http://localhost:3000/api/auth/callback/github
+    //    - http://localhost:3000/api/auth/callback/google
+    
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
