@@ -36,9 +36,9 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800">
-      <div className="wrapper py-4">
-        <nav className="flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 w-full">
+      <div className="wrapper py-4 w-full">
+        <nav className="flex items-center justify-between w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -142,8 +142,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
-          <div className="wrapper py-4 flex flex-col space-y-4">
+        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg w-full">
+          <div className="wrapper py-4 flex flex-col space-y-4 w-full">
             <Link href="/" className={`hover:text-blue-600 dark:hover:text-blue-400 transition ${isActive('/')}`} onClick={closeMenu}>
               Home
             </Link>

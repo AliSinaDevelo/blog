@@ -7,9 +7,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="wrapper py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 w-full">
+      <div className="wrapper py-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
